@@ -1,7 +1,7 @@
 package java.io;
 
-import static jsweet.dom.Globals.atob;
-import static jsweet.util.Globals.any;
+import static def.dom.Globals.atob;
+import static jsweet.util.Lang.any;
 
 /**
  * JSweet implementation based on a local storage FS.

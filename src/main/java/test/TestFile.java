@@ -1,8 +1,9 @@
 package test;
 
-import static jsweet.dom.Globals.console;
-import static jsweet.dom.Globals.document;
-import static jsweet.dom.Globals.localStorage;
+import static def.dom.Globals.console;
+import static def.dom.Globals.document;
+import static def.dom.Globals.localStorage;
+import static jsweet.util.Lang.$strict;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -11,13 +12,12 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import jsweet.dom.HTMLElement;
-import jsweet.util.Globals;
+import def.dom.HTMLElement;
 
 public class TestFile {
 
 	public static void assertEquals(Object o1, Object o2) {
-		if (!Globals.equalsStrict(o1, o2)) {
+		if ($strict(o1 != o2)) {
 			throw new Error("invalid assertion: " + o1 + "!=" + o2);
 		}
 	}

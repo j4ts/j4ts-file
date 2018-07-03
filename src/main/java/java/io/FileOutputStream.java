@@ -1,7 +1,8 @@
 package java.io;
 
-import static jsweet.dom.Globals.btoa;
-import static jsweet.util.Globals.array;
+import static def.dom.Globals.btoa;
+import static jsweet.util.Lang.array;
+import static jsweet.util.Lang.string;
 
 /**
  * JSweet partial implementation based on a local storage FS.
@@ -65,9 +66,9 @@ public class FileOutputStream extends OutputStream {
 
 	@Override
 	public void flush() throws IOException {
-		entry.data = btoa(array(array(content).map((b, __, ___) -> {
-			return jsweet.lang.String.fromCharCode(b);
-		})).join(""));
+		entry.data = btoa(string(array(content).map((b, __, ___) -> {
+			return string(def.js.String.fromCharCode(b));
+		}).join("")));
 		LocalStorageFileSystem.fs.putEntry(file.getAbsolutePath(), entry);
 	}
 

@@ -1,7 +1,7 @@
 package java.io;
 
-import static jsweet.dom.Globals.btoa;
-import static jsweet.util.Globals.array;
+import static def.dom.Globals.btoa;
+import static jsweet.util.Lang.array;
 
 /**
  * JSweet partial implementation based on a local storage FS.
@@ -65,10 +65,18 @@ public class FileOutputStream extends OutputStream {
 
 	@Override
 	public void flush() throws IOException {
-		entry.data = btoa(array(array(content).map((b, __, ___) -> {
-			return jsweet.lang.String.fromCharCode(b);
-		})).join(""));
-		LocalStorageFileSystem.fs.putEntry(file.getAbsolutePath(), entry);
+
+		// SV TODO: get this to compile successfully.  JSweet says:
+		//   [ERROR] * /Users/vorth/vZome/j4ts-file/src/main/java/java/io/FileOutputStream.java(72,18)cannot find symbol
+		//   [ERROR]   symbol:   method join()
+		//   [ERROR]   location: class def.js.String[]
+		
+		// entry.data = btoa(array(
+		// 	array(content).map( (b, __, ___) -> {
+		// 		return def.js.String.fromCharCode(b);
+		// 	})
+		// ).join());
+		// LocalStorageFileSystem.fs.putEntry(file.getAbsolutePath(), entry);
 	}
 
 	public void close() throws IOException {

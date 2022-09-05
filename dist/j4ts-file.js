@@ -11,7 +11,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-/* Generated from Java with JSweet 3.1.0 - http://www.jsweet.org */
+/* Generated from Java with JSweet 3.2.0-SNAPSHOT - http://www.jsweet.org */
 var test;
 (function (test) {
     var TestFile = /** @class */ (function () {
@@ -184,18 +184,6 @@ var java;
                         _this.entry = java.io.LocalStorageFileSystem.fs_$LI$().getEntry(file.getAbsolutePath());
                         _this.content = append ? /* getBytes */ (_this.entry.data).split('').map(function (s) { return s.charCodeAt(0); }) : [];
                     }
-                    if (_this.append === undefined) {
-                        _this.append = false;
-                    }
-                    if (_this.file === undefined) {
-                        _this.file = null;
-                    }
-                    if (_this.entry === undefined) {
-                        _this.entry = null;
-                    }
-                    if (_this.content === undefined) {
-                        _this.content = null;
-                    }
                 }
                 else if (((name != null && name instanceof java.io.File) || name === null) && ((typeof append === 'boolean') || append === null)) {
                     var __args = arguments;
@@ -248,18 +236,6 @@ var java;
                         _this.entry = java.io.LocalStorageFileSystem.fs_$LI$().getEntry(file.getAbsolutePath());
                         _this.content = append_1 ? /* getBytes */ (_this.entry.data).split('').map(function (s) { return s.charCodeAt(0); }) : [];
                     }
-                    if (_this.append === undefined) {
-                        _this.append = false;
-                    }
-                    if (_this.file === undefined) {
-                        _this.file = null;
-                    }
-                    if (_this.entry === undefined) {
-                        _this.entry = null;
-                    }
-                    if (_this.content === undefined) {
-                        _this.content = null;
-                    }
                 }
                 else if (((name != null && name instanceof java.io.File) || name === null) && append === undefined) {
                     var __args = arguments;
@@ -287,18 +263,6 @@ var java;
                         _this.append = append_2;
                         _this.entry = java.io.LocalStorageFileSystem.fs_$LI$().getEntry(file.getAbsolutePath());
                         _this.content = append_2 ? /* getBytes */ (_this.entry.data).split('').map(function (s) { return s.charCodeAt(0); }) : [];
-                    }
-                    if (_this.append === undefined) {
-                        _this.append = false;
-                    }
-                    if (_this.file === undefined) {
-                        _this.file = null;
-                    }
-                    if (_this.entry === undefined) {
-                        _this.entry = null;
-                    }
-                    if (_this.content === undefined) {
-                        _this.content = null;
                     }
                 }
                 else
@@ -392,12 +356,6 @@ var java;
                             throw new java.io.FileNotFoundException();
                         }
                         _this.content = atob(java.io.LocalStorageFileSystem.fs_$LI$().getEntry(file.getAbsolutePath()).data);
-                        _this.index = 0;
-                    }
-                    if (_this.content === undefined) {
-                        _this.content = null;
-                    }
-                    if (_this.index === undefined) {
                         _this.index = 0;
                     }
                 }

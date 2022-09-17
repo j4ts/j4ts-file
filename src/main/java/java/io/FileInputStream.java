@@ -1,7 +1,7 @@
 package java.io;
 
-import static jsweet.dom.Globals.atob;
-import static jsweet.util.Globals.any;
+import static def.dom.Globals.atob;
+import static jsweet.util.Lang.any;
 
 /**
  * JSweet implementation based on a local storage FS.
@@ -11,8 +11,8 @@ public class FileInputStream extends InputStream {
 	private byte[] content;
 	private int index;
 
-	public FileInputStream(String name) throws FileNotFoundException {
-		this(name != null ? new File(name) : null);
+	public FileInputStream(String n) throws FileNotFoundException {
+		this(n != null ? new File(n) : null);
 	}
 
 	public FileInputStream(File file) throws FileNotFoundException {

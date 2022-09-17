@@ -1,11 +1,11 @@
 package java.io;
 
-import static jsweet.dom.Globals.localStorage;
-import static jsweet.util.Globals.array;
+import static def.dom.Globals.localStorage;
+import static jsweet.util.Lang.array;
 
-import jsweet.lang.Array;
+import def.js.Array;
 import jsweet.lang.Interface;
-import jsweet.lang.JSON;
+import def.js.JSON;
 
 public class LocalStorageFileSystem extends FileSystem {
 
@@ -245,8 +245,11 @@ public class LocalStorageFileSystem extends FileSystem {
 			removeEntry(f.getAbsolutePath());
 			String parentPath = f.getParentFile().getAbsolutePath();
 			DirectoryEntry directoryEntry = getDirectoryEntry(parentPath);
-			Array<String> entries = array(directoryEntry.entries);
-			directoryEntry.entries = entries.splice(entries.indexOf(f.getName()), 1);
+			Array entries = array(directoryEntry.entries);
+
+			// SV TODO: get this to compile.  JSweet says:
+			// 2022-08-21 18:15:00.000 ERROR JSweetTranspiler:99 - /Users/vorth/vZome/j4ts-file/src/main/java/java/io/LocalStorageFileSystem.java:252: error: incompatible types: def.js.Array cannot be converted to java.lang.String[]
+			// directoryEntry.entries = entries.splice(entries.indexOf(f.getName()), 1);
 			putEntry(parentPath, directoryEntry);
 			return true;
 		}

@@ -1,16 +1,16 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.jsweet.candies.j4ts</groupId>
 	<artifactId>j4ts-file</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<properties>
-		<jsweet.transpiler.version>1.1.1</jsweet.transpiler.version>
+		<jsweet.transpiler.version>3.2.0-SNAPSHOT</jsweet.transpiler.version>
 	</properties>
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
@@ -18,26 +18,26 @@
 		<repository>
 			<id>jsweet-central</id>
 			<name>libs-release</name>
-			<url>http://repository.jsweet.org/artifactory/libs-release-local</url>
+			<url>https://repository.jsweet.org/artifactory/libs-release-local</url>
 		</repository>
 		<repository>
 			<snapshots />
 			<id>jsweet-snapshots</id>
 			<name>libs-snapshot</name>
-			<url>http://repository.jsweet.org/artifactory/libs-snapshot-local</url>
+			<url>https://repository.jsweet.org/artifactory/libs-snapshot-local</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>jsweet-plugins-release</id>
 			<name>plugins-release</name>
-			<url>http://repository.jsweet.org/artifactory/plugins-release-local</url>
+			<url>https://repository.jsweet.org/artifactory/plugins-release-local</url>
 		</pluginRepository>
 		<pluginRepository>
 			<snapshots />
 			<id>jsweet-plugins-snapshots</id>
 			<name>plugins-snapshot</name>
-			<url>http://repository.jsweet.org/artifactory/plugins-snapshot-local</url>
+			<url>https://repository.jsweet.org/artifactory/plugins-snapshot-local</url>
 		</pluginRepository>
 	</pluginRepositories>
 	<build>
@@ -60,15 +60,17 @@
 			<plugin>
 				<groupId>org.jsweet</groupId>
 				<artifactId>jsweet-maven-plugin</artifactId>
-				<version>1.2.0-SNAPSHOT</version>
+				<version>3.2.0-SNAPSHOT</version>
 				<configuration>
 					<verbose>true</verbose>
 					<!-- <sourceMap>true</sourceMap> -->
 					<bundle>true</bundle>
+					<module>none</module>
 					<declaration>true</declaration>
 					<outDir>src/main/resources/META-INF/resources/webjars/${project.artifactId}/${project.version}</outDir>
-					<dtsOut>src/main/resources/src/typings/${project.artifactId}/${project.version}</dtsOut>
+					<dtsOut>src/main/resources/META-INF/resources/typings/${project.artifactId}/${project.version}</dtsOut>
 					<targetVersion>ES3</targetVersion>
+					<javaCompilerExtraOptions>-source,1.8,-target,1.8</javaCompilerExtraOptions>
 				</configuration>
 				<executions>
 					<execution>
@@ -93,7 +95,7 @@
 									file="src/main/resources/META-INF/resources/webjars/${project.artifactId}/${project.version}/bundle.js"
 									tofile="dist/${project.artifactId}.js" verbose="true" />
 								<copy
-									file="src/main/resources/src/typings/${project.artifactId}/${project.version}/bundle.d.ts"
+									file="src/main/resources/META-INF/resources/typings/${project.artifactId}/${project.version}/bundle.d.ts"
 									tofile="dist/${project.artifactId}.d.ts" verbose="true" />
 							</target>
 						</configuration>
@@ -149,14 +151,14 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.jsweet.candies</groupId>
+			<groupId>org.jsweet</groupId>
 			<artifactId>jsweet-core</artifactId>
-			<version>1.2.0-SNAPSHOT</version>
+			<version>6.3.1</version>
 		</dependency>
 		<dependency>
-			<groupId>org.jsweet.candies</groupId>
+			<groupId>org.jsweet</groupId>
 			<artifactId>j4ts</artifactId>
-			<version>0.3.0-SNAPSHOT</version>
+			<version>2.1.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
@@ -164,17 +166,17 @@
 		<repository>
 			<id>jsweet-release</id>
 			<name>libs-release</name>
-			<url>http://repository.jsweet.org/artifactory/libs-release-local</url>
+			<url>https://repository.jsweet.org/artifactory/libs-release-local</url>
 		</repository>
 		<snapshotRepository>
 			<id>jsweet-snapshots</id>
 			<name>libs-snapshot</name>
-			<url>http://repository.jsweet.org/artifactory/libs-snapshot-local</url>
+			<url>https://repository.jsweet.org/artifactory/libs-snapshot-local</url>
 		</snapshotRepository>
 	</distributionManagement>
 	<organization>
 		<name>JSweet</name>
-		<url>http://www.jsweet.org</url>
+		<url>https://www.jsweet.org</url>
 	</organization>
 
 </project>
